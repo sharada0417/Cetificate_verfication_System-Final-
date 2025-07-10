@@ -3,6 +3,8 @@ const app = express();
 const mongoose = require('mongoose');
 const port = 8000;
 
+const StudentController = require('./controllers/Students');
+app.use('/students',StudentController);
 // Middleware
 app.use(express.json());
 
