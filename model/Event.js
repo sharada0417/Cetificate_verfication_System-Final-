@@ -1,4 +1,4 @@
-const mongoose = required('mongoose');
+const mongoose = require('mongoose');
 
 const eventSchema = new mongoose.Schema({
     eventId :{

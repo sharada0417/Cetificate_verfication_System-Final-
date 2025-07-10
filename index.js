@@ -1,16 +1,21 @@
-const express = require('express')
+const express = require('express');
 const app = express();
-const mongoose = required('mongoose')
+const mongoose = require('mongoose');
+const port = 8000;
 
+// Middleware
 app.use(express.json());
 
-mongoose.connect('mongodb://localhost:27017/cetificateVerify')
-then(()=>{
-    console.log("Database connected")
-}).catch((error)=>{
-    console.error(error);
-})
+// Connect to MongoDB
+mongoose.connect('mongodb://127.0.0.1:27017/cetificateVerify')
+  .then(() => {
+    console.log("Database connected");
+  })
+  .catch((error) => {
+    console.error("Database connection error:", error);
+  });
 
-app.listen(port,()=>{
-    console.log(`Server is sunning on ${port}`)
-})
+// Start the server
+app.listen(port, () => {
+  console.log(`Server is running on ${port}`);
+});
